@@ -1,253 +1,210 @@
 # Customer Segmentation Dashboard
-A comprehensive Machine Learning based customer segmentation web application with K-Means clustering, PCA visualization, interactive analytics dashboard, and business insights generation.
+
+A Machine Learning based customer segmentation web application built using K-Means clustering, PCA visualization, and interactive business analytics.
+
+---
 
 ## Description
-An intelligent customer segmentation platform built with Python and Machine Learning. This application leverages K-Means clustering algorithms to automatically segment customers into distinct groups based on behavioral and demographic patterns. The dashboard provides interactive visualizations, PCA-based dimensional reduction analysis, and actionable business insights for targeted marketing strategies.
 
-## Key Features
+Customer segmentation is an important technique used by retail businesses to understand customer behavior and improve marketing strategies.
 
-- K-Means clustering for customer segmentation
-- PCA (Principal Component Analysis) visualization
-- Interactive analytics dashboard
-- Real-time customer insights generation
-- Behavioral pattern analysis
-- Demographic segmentation
-- Business recommendations engine
-- Data preprocessing and normalization
-- Multiple clustering metrics and evaluation
+This project uses Machine Learning algorithms to group customers into different segments based on:
 
-## Technology Stack
+- Age
+- Annual Income
+- Spending Score
+- Purchase Frequency
+
+The application provides an interactive dashboard with clustering visualizations, PCA analysis, business insights, and customer behavior analytics.
+
+---
+
+# Features
+
+- K-Means Clustering
+- Elbow Method Analysis
+- PCA Visualization
+- Hierarchical Clustering Comparison
+- Interactive Dashboard using Streamlit
+- Business Insights Generation
+- Cluster Profile Analytics
+- 3D Customer Visualization
+- Downloadable Insights Report
+- Dark Theme Dashboard UI
+
+---
+
+# Technology Stack
 
 | Component | Technology |
-|-----------|-----------|
-| Language | Python 3.7+ |
-| ML Framework | Scikit-learn |
-| Visualization | Matplotlib, Seaborn, Plotly |
-| Dashboard | Streamlit / Flask |
+|---|---|
+| Programming Language | Python |
+| Machine Learning | Scikit-learn |
+| Dashboard | Streamlit |
 | Data Processing | Pandas, NumPy |
-| Dimensionality Reduction | Scikit-learn PCA |
-| Database | SQLite (optional) |
-| Data Format | CSV, JSON |
+| Visualization | Plotly, Matplotlib, Seaborn |
+| Clustering Algorithm | K-Means |
+| Dimensionality Reduction | PCA |
+| Version Control | Git & GitHub |
 
-## File Structure
+---
 
-```
-Customer-Segmentation-Dashboard/
-│
-├── main.py                 # Main application entry point
-├── segmentation.py         # K-Means clustering module
-├── pca_analysis.py         # PCA visualization module
-├── dashboard.py            # Interactive dashboard
-├── data_preprocessing.py    # Data cleaning and normalization
-├── insights_generator.py    # Business insights generation
-├── config.py               # Configuration settings
-├── requirements.txt        # Python dependencies
-├── data/                   # Data directory
-│   ├── raw/                # Raw customer data
-│   ├── processed/          # Cleaned and normalized data
-│   ├── segments/           # Segmentation results
-│   └── sample_data.csv     # Sample dataset
-├── models/                 # Trained models directory
-│   └── kmeans_model.pkl    # Serialized K-Means model
-├── results/                # Output and results
-│   ├── clusters.json       # Clustering results
-│   ├── insights.json       # Generated insights
-│   └── visualizations/     # Generated charts
-├── logs/                   # Log files directory
-│   └── app.log             # Application logs
-├── README.md               # Project documentation
-└── .gitignore              # Git ignore file
-```
+# Dataset Used
 
-## Installation Instructions
+Primary Dataset:
 
-### Prerequisites
-- Python (v3.7 or higher)
-- pip (Python package manager)
-- Virtual environment (recommended)
+- Mall Customer Segmentation Dataset
 
-### Setup
+Dataset Features:
+- Customer ID
+- Gender
+- Age
+- Annual Income
+- Spending Score
 
-1. Clone the repository:
+Additional Feature:
+- Purchase Frequency (generated for behavioral analysis)
+
+Dataset Source:
+https://www.kaggle.com/datasets/vjchoudhary7/customer-segmentation-tutorial-in-python
+
+---
+
+# Project Structure
+
 ```bash
-git clone https://github.com/PrajwalShettyR/Customer-Segmentation-Dashboard.git
-cd Customer-Segmentation-Dashboard
+ML Project/
+│
+├── app.py
+├── requirements.txt
+├── README.md
+├── .gitignore
+│
+├── dataset/
+│   └── Mall_Customers.csv
+│
+└── src/
+    ├── preprocessing.py
+    ├── clustering.py
+    ├── visualization.py
+    └── insights.py
 ```
 
-2. Create a virtual environment:
+---
+
+# Installation
+
+## Clone Repository
+
+```bash
+git clone https://github.com/YOUR_USERNAME/customer-segmentation-dashboard.git
+```
+
+## Move Into Project Directory
+
+```bash
+cd customer-segmentation-dashboard
+```
+
+## Create Virtual Environment
+
+### Windows
+
 ```bash
 python -m venv venv
 ```
 
-3. Activate the virtual environment:
+### Activate Virtual Environment
 
-**On Windows:**
 ```bash
 venv\Scripts\activate
 ```
 
-**On macOS/Linux:**
-```bash
-source venv/bin/activate
-```
+---
 
-4. Install dependencies:
+# Install Dependencies
+
 ```bash
 pip install -r requirements.txt
 ```
 
-## Usage Examples
+---
 
-### Basic Usage
+# Run the Application
+
 ```bash
-python main.py
+streamlit run app.py
 ```
 
-### With Custom Arguments
-```bash
-python main.py --clusters 4 --algorithm kmeans --output json
-```
+---
 
-### Available Options
+# Dashboard Features
 
-| Option | Description | Default |
-|--------|-------------|---------|
-| --input | Input data file path | data/sample_data.csv |
-| --clusters | Number of customer segments | 3 |
-| --algorithm | Clustering algorithm | kmeans |
-| --output | Output format (json, csv, html) | json |
-| --visualize | Generate visualizations | True |
-| --log-level | Logging level (DEBUG, INFO, WARNING) | INFO |
+## 1. Elbow Method
+Used to determine the optimal number of clusters.
 
-## Configuration
+## 2. PCA Visualization
+Reduces dimensions for easier cluster visualization.
 
-Edit `config.py` to customize segmentation parameters:
+## 3. Customer Segmentation
+Groups customers into different behavioral categories.
 
-```python
-# K-Means Configuration
-NUM_CLUSTERS = 3
-MAX_ITERATIONS = 300
-RANDOM_STATE = 42
-INIT_METHOD = 'k-means++'
+## 4. Cluster Profile Analytics
+Displays average values for:
+- Age
+- Income
+- Spending Score
+- Purchase Frequency
 
-# PCA Configuration
-PCA_COMPONENTS = 2
-EXPLAINED_VARIANCE_THRESHOLD = 0.95
+## 5. 3D Customer Visualization
+Interactive 3D graph for customer analysis.
 
-# Data Preprocessing
-NORMALIZE_DATA = True
-HANDLE_OUTLIERS = True
-OUTLIER_METHOD = 'iqr'  # 'iqr' or 'zscore'
+## 6. Business Insights
+Generates marketing recommendations based on customer behavior.
 
-# Logging
-LOG_FILE = "logs/app.log"
-LOG_LEVEL = "INFO"
+---
 
-# Output Settings
-OUTPUT_DIR = "results/"
-SAVE_MODELS = True
-```
+# Customer Categories
 
-## Output Examples
+The system identifies customer groups such as:
 
-### Console Output
-```
-=== Customer Segmentation Results ===
+- Premium Customers
+- Potential Customers
+- Impulsive Buyers
+- Low Value Customers
 
-Clustering Summary:
-  - Number of Clusters: 3
-  - Algorithm: K-Means
-  - Inertia: 1254.32
-  - Silhouette Score: 0.652
+---
 
-Cluster Breakdown:
-  Cluster 0: 156 customers (32.5%)
-    - Avg Spending: $2,450
-    - Avg Purchase Frequency: 12/year
-    
-  Cluster 1: 215 customers (44.8%)
-    - Avg Spending: $1,800
-    - Avg Purchase Frequency: 8/year
-    
-  Cluster 2: 109 customers (22.7%)
-    - Avg Spending: $4,100
-    - Avg Purchase Frequency: 18/year
+# Machine Learning Concepts Used
 
-PCA Variance Explained: 87.3%
-```
+- Unsupervised Learning
+- K-Means Clustering
+- Euclidean Distance
+- Cluster Centroids
+- PCA (Principal Component Analysis)
+- Hierarchical Clustering
 
-### Dashboard Features
-- Interactive cluster visualization
-- Customer distribution charts
-- Segment characteristics analysis
-- Business insights and recommendations
-- Export functionality for reports
+---
 
-## Running the Application
+# Future Improvements
 
-### Terminal Execution
-```bash
-# Activate virtual environment
-source venv/bin/activate  # or venv\Scripts\activate on Windows
+- Real-time customer analytics
+- Advanced clustering algorithms
+- Automated report generation
+- Deployment using cloud platforms
+- Better recommendation engine
+- Live database integration
 
-# Run segmentation
-python main.py
+---
 
-# Run with custom parameters
-python main.py --clusters 5 --output html --visualize
 
-# Run dashboard
-streamlit run dashboard.py  # if using Streamlit
-```
-
-## Future Enhancements
-
-- [ ] Advanced clustering algorithms (DBSCAN, Hierarchical Clustering)
-- [ ] Real-time data streaming integration
-- [ ] REST API endpoints
-- [ ] Web-based dashboard with authentication
-- [ ] Automated customer profiling
-- [ ] Predictive analytics for churn prediction
-- [ ] Multi-language support
-- [ ] Docker containerization
-- [ ] Machine learning model versioning
-- [ ] Performance optimization for large datasets
-
-## Error Codes & Troubleshooting
-
-| Issue | Solution |
-|-------|----------|
-| ModuleNotFoundError: scikit-learn | Run `pip install -r requirements.txt` |
-| No data found | Verify CSV file path in config or use `--input` parameter |
-| Memory error on large datasets | Reduce data size or optimize preprocessing |
-| PCA convergence issues | Adjust `EXPLAINED_VARIANCE_THRESHOLD` or normalize data |
-| No visualizations generated | Check `VISUALIZE` setting and ensure matplotlib is installed |
-
-## Contributing
-
-Contributions are welcome! Please follow these steps:
-
-1. Fork the repository
-2. Create a feature branch (`git checkout -b feature/AmazingFeature`)
-3. Commit your changes (`git commit -m 'Add AmazingFeature'`)
-4. Push to the branch (`git push origin feature/AmazingFeature`)
-5. Open a Pull Request
 
 ## Author
 
-Created by **PrajwalShettyR**
+Created by **[PrajwalShettyR](https://github.com/PrajwalShettyR)**
 
-## License
-
-This project is open source and available under the MIT License.
+---
 
 ## Support
 
-For issues, questions, or suggestions, please open an issue in the repository or contact the maintainer.
-
-## Acknowledgments
-
-- Scikit-learn for ML algorithms
-- Pandas for data manipulation
-- Plotly for interactive visualizations
-- The open-source community
+For issues, questions, or suggestions, please open an [issue](https://github.com/PrajwalShettyR/System-Performance-Monitor/issues) in the repository.
