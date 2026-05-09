@@ -50,4 +50,4 @@ def apply_pca(X):
 
     transformed = pca.fit_transform(X)
 
-    return transformed
+    return transformed  
